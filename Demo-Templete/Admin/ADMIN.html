@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../../Custom/customCSS.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ADMIN</title>
+</head>
+
+<body>
+    <div class="flex h-screen ">
+        <!-- DASHBOARD -->
+        <div class="hidden md:flex flex-col w-1/6 bg-gray-800">
+            <div class="flex items-center justify-center h-16 bg-gray-900">
+                <a href="index.php"><span class="text-white font-bold uppercase">Quản lý</span></a>
+            </div>
+            <div class="flex flex-col flex-1 overflow-y-auto">
+                <nav class="flex-1 px-2 py-4 bg-gray-800">
+                    <a href="index.php?act=list_danhmuc_mua"
+                        class="flex items-center px-4 py-2 text-gray-100 hover:bg-gray-700">
+                        Thể loại
+                    </a>
+                    <a href="index.php?act=list_danhmuc_mien"
+                        class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700">
+                        Danh sách truyện
+                    </a>
+                    <a href="index.php?act=list_ngay_xuat_phat"
+                        class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700">
+                        Tài khoản
+                    </a>
+                    <a href="index.php?act=list_thoi_gian"
+                        class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700">
+                        Bình luận
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row flex flex-col flex-1 overflow-y-auto">
+            <div class="">
+                <h1 class="text-center text-3xl bg-gray-700 text-white my-0.5 mt-3.5 rounded-md h-11">Thêm mới Thể loại
+                </h1>
+            </div>
+            <!-- Form nhập thêm mùa -->
+            <div class="ml-10 mt-8">
+                <form action="index.php?act=add_tour" method="post" enctype="multipart/form-data">
+                    <div class="grid grid-cols-2">
+                        <div class="">
+                            <!-- Mã tour -->
+                            <div class="row mr-12">
+                                <label for="" class="text-lg font-semibold text-gray-700">ID Thể loại</label><br>
+                                <input type="text" name="id_tour" disabled
+                                    class="border-gray-700 w-full border-2 rounded-lg h-9">
+                            </div>
+
+                            <!-- Tên tour -->
+                            <div class="mt-8 mr-12">
+                                <label for="" class="text-lg font-semibold text-gray-700">Tên Thể loại</label><br>
+                                <input type="text" name="ten_tour" id="ten_tour"
+                                    class="border-gray-700 w-full border-2 rounded-lg h-9">
+                                <span id="ten_tour_error" class="text-red-500"></span>
+                            </div>
+
+                            <!-- Hình Ảnh -->
+                            <div class="mt-8 mr-12">
+                                <label for="" class="text-lg font-semibold text-gray-700">Địa điểm</label><br>
+                                <input type="file" name="hinh_anh_mau" id="hinh_anh_mau"
+                                    class="border-gray-700 w-full border-2 rounded-lg h-9">
+                                <span id="hinh_anh_mau_error" class="text-red-500"></span>
+                            </div>
+                        </div>
+
+                        <div class="">
+
+                            <!-- ID miền -->
+                            <div class=" mr-12">
+                                <label for="" class="text-lg font-semibold text-gray-700">Mã miền</label><br>
+                                <select name="ma_mien" id="ma_mien"
+                                    class="border-gray-700 w-full border-2 rounded-lg h-9">
+                                    <option value="">-None-</option>
+                                    <option value=' . $id_mien . '>' . $ten_mien . '</option>
+                                </select>
+                                <span id="ma_mien_error" class="text-red-500"></span>
+                            </div>
+
+                            <!-- ID mùa -->
+                            <div class="mt-8 mr-12">
+                                <label for="" class="text-lg font-semibold text-gray-700">Mã mùa</label><br>
+                                <select name="ma_mua" id="ma_mua"
+                                    class="border-gray-700 w-full border-2 rounded-lg h-9">
+                                    <option value="">-None-</option>
+                                    <option value=' . $id_mua . '>' . $ten_mua . '</option>
+                                </select>
+                                <span id="ma_mua_error" class="text-red-500"></span>
+                            </div>
+
+                            <!-- ID thời gian -->
+                            <div class="mt-8 mr-12">
+                                <label for="" class="text-lg font-semibold text-gray-700">Mã Thời Gian</label><br>
+                                <select name="ma_thoi_gian" id="ma_thoi_gian"
+                                    class="border-gray-700 w-full border-2 rounded-lg h-9">
+                                    <option value="">-None-</option>
+                                    <option class="hidden" value=' . $id_thoi_gian . '> . $so_ngay_dem . </option>
+                                    <option value=' . $id_thoi_gian . '> . $so_ngay_dem . </option>
+                                </select>
+                                <span id="ma_thoi_gian_error" class="text-red-500"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Tổng quan *-->
+                    <div class="mt-8 mr-12">
+                        <label for="" class="text-lg font-semibold text-gray-700">Tổng quan</label><br>
+                        <textarea name="tong_quan" id="tong_quan" cols="50" rows="25"
+                            class="border-gray-700 w-full border-2 rounded-lg h-24"></textarea>
+                        <span id="tong_quan_error" class="text-red-500"></span>
+                    </div>
+
+                    <!-- Hành trình *-->
+                    <div class="mt-8 mr-12">
+                        <label for="" class="text-lg font-semibold text-gray-700">Hành trình</label><br>
+                        <textarea name="hanh_trinh" id="hanh_trinh" cols="50" rows="25"
+                            class="border-gray-700 w-full border-2 rounded-lg h-24"></textarea>
+                        <span id="hanh_trinh_error" class="text-red-500"></span>
+                    </div>
+
+                    <!-- Script JavaScript -->
+                    <!-- <script>
+                        document.querySelector('form').addEventListener('submit', function (event) {
+                            var tenTourInput = document.getElementById('ten_tour');
+                            var tenTourError = document.getElementById('ten_tour_error');
+
+                            var giaInput = document.getElementById('gia');
+                            var giaError = document.getElementById('gia_error');
+
+                            var tongQuanInput = document.getElementById('tong_quan');
+                            var tongQuanError = document.getElementById('tong_quan_error');
+
+                            var hanhTrinhInput = document.getElementById('hanh_trinh');
+                            var hanhTrinhError = document.getElementById('hanh_trinh_error');
+
+                            var soLuongInput = document.getElementById('so_luong');
+                            var soLuongError = document.getElementById('so_luong_error');
+
+                            var diaDiemInput = document.getElementById('dia_diem');
+                            var diaDiemError = document.getElementById('dia_diem_error');
+
+                            var phuongTienInput = document.getElementById('phuong_tien');
+                            var phuongTienError = document.getElementById('phuong_tien_error');
+
+                            var xuatPhatInput = document.getElementById('xuat_phat');
+                            var xuatPhatError = document.getElementById('xuat_phat_error');
+
+                            var maMienInput = document.getElementById('ma_mien');
+                            var maMienError = document.getElementById('ma_mien_error');
+
+                            var maMuaInput = document.getElementById('ma_mua');
+                            var maMuaError = document.getElementById('ma_mua_error');
+
+                            var maThoiGianInput = document.getElementById('ma_thoi_gian');
+                            var maThoiGianError = document.getElementById('ma_thoi_gian_error');
+
+                            var hinhAnhMauInput = document.getElementById('hinh_anh_mau');
+                            var hinhAnhMauError = document.getElementById('hinh_anh_mau_error');
+
+                            if (tenTourInput.value.trim() === '') {
+                                tenTourError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                tenTourError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (giaInput.value.trim() === '') {
+                                giaError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                giaError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (tongQuanInput.value.trim() === '') {
+                                tongQuanError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                tongQuanError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (hanhTrinhInput.value.trim() === '') {
+                                hanhTrinhError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                hanhTrinhError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (soLuongInput.value.trim() === '') {
+                                soLuongError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                soLuongError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (diaDiemInput.value.trim() === '') {
+                                diaDiemError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                diaDiemError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (phuongTienInput.value.trim() === '') {
+                                phuongTienError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                phuongTienError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (xuatPhatInput.value.trim() === '') {
+                                xuatPhatError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                xuatPhatError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (maMienInput.value.trim() === '') {
+                                maMienError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                maMienError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (maMuaInput.value.trim() === '') {
+                                maMuaError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                maMuaError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (ma_Thoi_GianInput.value.trim() === '') {
+                                ma_Thoi_GianError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                ma_Thoi_GianError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+
+                            if (hinhAnhMauInput.value.trim() === '') {
+                                hinhAnhMauError.textContent = "Không để trống";
+                                event.preventDefault(); // Ngăn chặn gửi form
+                            } else {
+                                hinhAnhMauError.textContent = ""; // Xóa thông báo lỗi nếu có
+                            }
+                        });
+                    </script> -->
+
+                    <div class="mt-8">
+                        <input type="submit" name="add_new_tour" value="Thêm mới"
+                            class="bg-gray-700 h-8 w-24 text-white rounded-lg hover:bg-cyan-600 cursor-pointer m-2">
+                        <input type="reset" name="" value="Nhập lại"
+                            class="bg-gray-700 h-8 w-24 text-white rounded-lg hover:bg-cyan-600 cursor-pointer m-2">
+                        <a href="index.php?act=list_tour">
+                            <input type="button" name="" value="Danh sách"
+                                class="bg-gray-700 h-8 w-24 text-white rounded-lg hover:bg-cyan-600 cursor-pointer m-2"></a>
+                    </div>
+
+                    <!-- <div class="mt-8">
+                        <?php if (!empty($thongbao)): ?>
+                        <div class="bg-green-500 text-white text-center py-2 text-xl rounded-md">
+                            <?php echo $thongbao; ?>
+                        </div>
+                        <?php endif; ?>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

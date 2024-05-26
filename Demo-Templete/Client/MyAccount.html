@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../../Custom/customCSS.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>My Account</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="bg-transparent border-b-2 shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex grid grid-cols-3 justify-start">
+
+                <!-- List Menu -->
+                <div class="col-span-2 mr-auto flex">
+                    <div class="w-20 md:w-28 items-center z-10">
+                        <img src="../../Images/AH_Short_Stories.png" alt="website logo">
+                    </div>
+                    <ul id="menu" class="invisible fixed top-0 left-0 w-full h-screen flex flex-col justify-start md:justify-end items-center 
+                    bg-gray-100 bg-opacity-90 font-bold 
+                    md:bg-transparent md:h-auto md:flex-row md:justify-end md:static z-10 md:visible md:gap-6">
+                        <li class="m-7 md:m-0">
+                            <a class="menu text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-cyan-500 to-purple-500 transition duration-400 ease-in"
+                                href="#">
+                                Thể loại
+                            </a>
+                        </li>
+                        <li class="m-7 md:m-0">
+                            <a class="menu text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-cyan-500 to-purple-500 transition duration-400 ease-in"
+                                href="#">
+                                Tác phẩm HOT
+                            </a>
+                        </li>
+                        <li class="m-7 md:m-0">
+                            <a class="menu text-black hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-cyan-500 to-purple-500 transition duration-400 ease-in"
+                                href="#">
+                                Tác phẩm của tôi
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Đăng nhập - Tìm kiếm -->
+                <div class="flex flex-row justify-end items-center gap-4 pr-3">
+                    <!-- Tìm kiếm -->
+                    <div class="m-7 mr-3 md:mr-7 md:m-0 flex justify-between w-full">
+                        <form class="items-stretch " action="index.php?act=tim_tour" id="search_form" method="post">
+                            <input type="text" name="word" id="word" placeholder=" Tìm kiếm..."
+                                class="rounded-full border-gray-400 border-2 outline-none w-36 md:w-60">
+                        </form>
+                        <div class=" items-center justify-items-end">
+                            <i id="search_icon"
+                                class="md:visible text-2xl fas fa-search text-black hover:text-cyan-400 transition duration-400 ease-in cursor-pointer "></i>
+                        </div>
+                    </div>
+
+                    <!-- Button Đăng Kí Đăng Nhập -->
+                    <div class="m-7 md:m-0 flex ">
+                        <a href="#"
+                            class="flex text-2xl text-black hover:text-cyan-400 transition duration-400 ease-in place-items-center">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </div>
+
+                    <!-- Menu-button -->
+                    <div id="menu-button" class="z-20 cursor-pointer md:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section class="my-4 mx-6">
+        <div class="">
+            <!-- Nội dung chính -->
+            <div class="grid grid-rows-1 gap-2 md:grid-cols-6 md:gap-4">
+                <!-- Thông tin tài khoản -->
+                <div class="flex-row md:col-span-2 leading-9 mt-4">
+                    <div class=" flex">
+                        <h2 class="text-2xl text-white font-bold bg-gray-800 p-1 mr-2">Tài Khoản</h2>
+                        <span class="text-2xl font-bold my-auto underline">Của Tôi </span>
+                    </div>
+                    <!-- avarta -->
+                    <div class="items-center flex justify-center mt-4">
+                        <img style="width:200px;height:200px;border-radius:50%" src="../../Images/PMTkh2.jpg" alt=""
+                            class="object-cover"><br>
+                    </div>
+                    <p class="font-medium mt-6 text-lg text-cyan-900">Tên người dùng: <span class="font-normal">
+                            Lee Quang Huy
+                        </span></p>
+                    <p class="font-medium text-lg text-cyan-900">Email: <span class="font-normal">
+                            huyngao123deptrai@gmai.com
+                        </span></p>
+                    <p class="font-medium text-lg text-cyan-900">Số điện thoại: <span class="font-normal">0
+                            0123456789
+                        </span></p>
+                    <p class="font-medium text-lg text-cyan-900">Địa chỉ: <span class="font-normal">
+                            Hà Tây
+                        </span></p>
+                </div>
+
+                <!-- LATEST STORIES -->
+                <div class="my-4 md:col-span-4">
+
+                    <!-- TITLE -->
+                    <div class=" flex">
+                        <h2 class="text-2xl text-white font-bold bg-gray-800 p-1 mr-2">Truyện</h2>
+                        <span class="text-2xl font-bold my-auto underline">Của Tôi </span>
+                    </div>
+
+                    <!-- LIST ITEM -->
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-3 my-4">
+
+                        <!-- ITEM -->
+                        <div class="grid grid-cols-3 gap-5">
+                            <div class="my-auto">
+                                <a href="">
+                                    <img class="object-cover w-96 h-[15rem]" src="../../Images/NPLkh3.jpg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-span-2 spacing-4">
+                                <div class="pb-4">
+                                    <a href="">
+                                        <h3
+                                            class="text-xl font-medium hover:text-transparent
+                                    hover:bg-clip-text hover:bg-gradient-to-r from-blue-600 to-emerald-500 transition duration-400 ease-in">
+                                            Câu truyện số X</h3>
+                                    </a>
+                                </div>
+
+                                <div class="block-ellipsis">
+                                    <p class="leading-relaxed">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                        nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia
+                                        deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+
+                                <div class="py-4">
+                                    <p class="">Tác giả: <span class="text-gray-800"> Lorem ipsum dolor</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM -->
+                        <div class="grid grid-cols-3 gap-5">
+                            <div class="my-auto">
+                                <a href="">
+                                    <img class="object-cover w-96 h-[15rem]" src="../../Images/NPLkh3.jpg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-span-2 spacing-4">
+                                <div class="pb-4">
+                                    <a href="">
+                                        <h3
+                                            class="text-xl font-medium hover:text-transparent
+                                    hover:bg-clip-text hover:bg-gradient-to-r from-blue-600 to-emerald-500 transition duration-400 ease-in">
+                                            Câu truyện số X</h3>
+                                    </a>
+                                </div>
+
+                                <div class="block-ellipsis">
+                                    <p class="leading-relaxed">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                        nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia
+                                        deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+
+                                <div class="py-4">
+                                    <p class="">Tác giả: <span class="text-gray-800"> Lorem ipsum dolor</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM -->
+                        <div class="grid grid-cols-3 gap-5">
+                            <div class="my-auto">
+                                <a href="">
+                                    <img class="object-cover w-96 h-[15rem]" src="../../Images/NPLkh3.jpg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-span-2 spacing-4">
+                                <div class="pb-4">
+                                    <a href="">
+                                        <h3
+                                            class="text-xl font-medium hover:text-transparent
+                                    hover:bg-clip-text hover:bg-gradient-to-r from-blue-600 to-emerald-500 transition duration-400 ease-in">
+                                            Câu truyện số X</h3>
+                                    </a>
+                                </div>
+
+                                <div class="block-ellipsis">
+                                    <p class="leading-relaxed">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                        nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                                        officia
+                                        deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+
+                                <div class="py-4">
+                                    <p class="">Tác giả: <span class="text-gray-800"> Lorem ipsum dolor</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="bg-gray-100 border-t-2 shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 container flex mx-auto px-4 justify-between">
+            <div class="flex my-auto py-4 md:py-0">
+                <div class="my-auto w-20 md:w-28 items-center z-10">
+                    <img src="../../Images/AH_Short_Stories.png" alt="website logo">
+                </div>
+                <div class="my-auto">
+                    <i class="fa-regular fa-copyright"></i>
+                    <span class="font-semibold"> 2024 - Hãy viết nên câu chuyện của bạn</span>
+                </div>
+            </div>
+
+            <div class="flex my-auto md:ml-auto py-4 md:py-0">
+                <h3 class="font-semibold underline mr-1">Liên hệ:</h3>
+                <span
+                    class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-cyan-700 to-purple-800">nguyenanlinhdao@gmail.com</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="../../Custom/search.js"></script>
+<script type="module" src="../../Custom/slider.js"></script>
+
+</html>
